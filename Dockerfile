@@ -9,6 +9,7 @@ RUN echo "===> Adding build-essential"  && \
 
 # RUN JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/" >> /etc/environment && \
 #    source /etc/environment
+# DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 RUN curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null && \
     AZ_REPO=$(lsb_release -cs) && \
